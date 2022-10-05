@@ -1,6 +1,11 @@
 .app{
   display: flex;
   flex-direction: column;
-  width: 95%;
+  width: 100%;
   margin: 0 auto;
+  padding: 15px;
+}
+
+.main-container-app {
+  background: radial-gradient(circle, rgba(2, 0, 36, 1) 0%, rgba(62, 0, 120, 1) 50%, rgba(0, 212, 255, 1) 100%);
 }
