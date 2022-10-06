@@ -4,7 +4,7 @@ import { Projects } from "../data-json/data-json";
 
 import { useNavigate } from "react-router-dom";
 
-import IconButton from '@mui/material/IconButton';
+import IconButton from "@mui/material/IconButton";
 import Button from "@mui/material/Button";
 import HomeIcon from "@mui/icons-material/Home";
 
@@ -56,33 +56,56 @@ const SingleProject = () => {
 	return (
 		<Fragment>
 			{project
-				? <div className="flex flex-col items-center justify-center w-full min-h-[100vh]">
-						<div className="mr-auto ml-4">
+				? <Fragment>
+						<div className="mr-auto ml-4 fixed top-0 left-4">
 							<IconButton
 								onClick={handlerHome}
-								color="success"
+								color="primary"
 								size="large"
 							>
-								<HomeIcon fontSize="inherit"/>
-								</IconButton>
+								<HomeIcon fontSize="inherit" />
+							</IconButton>
 						</div>
-						<div className="title flex mb-5">
-							<h1 className="text-white">
-								{project.title}
-							</h1>
+						<div className="flex flex-col items-center justify-center w-full min-h-[100vh] single-card-container pb-4">
+							<div className="title flex mb-5">
+								<h1 className="text-white mt-5">
+									{project.title}
+								</h1>
+							</div>
+							<div className="flex justify-center w-4/5">
+								<Carousel showArrows={true} autoPlay={true}>
+									{picLinks.map((link, i) => {
+										return (
+											<div>
+												<img src={link} alt={i} />
+											</div>
+										);
+									})}
+								</Carousel>
+							</div>
+							<div className="flex items-start flex-col justify-start bg-gray-200 rounded-lg p-10 w-5/6 border-1 shadow-2xl">
+								<div className="mb-10">
+									<h2>
+										{project.problem}
+									</h2>
+								</div>
+								<div className="mb-10">
+									{project.features.map(feature => {
+										return (
+											<h1 className="py-1">
+												{feature}
+											</h1>
+										);
+									})}
+								</div>
+								<div className="mb-10">
+									<h2>
+										{project.final}
+									</h2>
+								</div>
+							</div>
 						</div>
-						<div className="flex justify-center w-4/5">
-							<Carousel showArrows={true} autoPlay={true}>
-								{picLinks.map((link, i) => {
-									return (
-										<div>
-											<img src={link} alt={i} />
-										</div>
-									);
-								})}
-							</Carousel>
-						</div>
-					</div>
+					</Fragment>
 				: <div className="flex justify-center w-full min-h-[100vh]">
 						<div>empty project</div>
 					</div>}
