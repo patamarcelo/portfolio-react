@@ -1,14 +1,20 @@
 import * as React from "react";
-import Card from "@mui/material/Card";
+// import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
-import Img from './sample.jpg'
+
+import { useNavigate } from 'react-router-dom'
+
 export default function MediaCard(props) {
-		const {project, description, photoUrl} = props;
-		const maxLength = 165
+		const {project, description, photoUrl, projectName} = props;
+		const maxLength = 104
+		const navigation = useNavigate()
+		const handlerNavigation = () => {
+			navigation(`/${projectName}`)
+		}	
 	return (
 		<div className="w-full  text-white p-6 card-media-container-main">
 			<CardMedia
@@ -28,7 +34,7 @@ export default function MediaCard(props) {
 				</Typography>
 			</CardContent>
 			<CardActions>
-				<Button size="small">See More...</Button>
+				<Button size="small" onClick={handlerNavigation}>See More...</Button>
 			</CardActions>
 			</div>
 		</div>

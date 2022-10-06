@@ -26,7 +26,7 @@ const HomePage = () => {
 			</div>
 			<div>
 				<div className="grid grid-cols-1 lg:grid-cols-2 gap-2 ">
-					{Projects.map(project => {
+					{Projects.map((project, index) => {
 						return (
 							<div
 								key={project.name}
@@ -37,6 +37,8 @@ const HomePage = () => {
 									project={toTitleCase(project.project.title)}
 									description={project.project.problem}
 									photoUrl={handleUrl(project.name, 1)}
+									indexProject={index}
+									projectName={project.name}
 								/>
 							</div>
 						);
