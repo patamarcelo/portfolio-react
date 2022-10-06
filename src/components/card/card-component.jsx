@@ -7,26 +7,24 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Img from './sample.jpg'
 export default function MediaCard(props) {
-	const { name } = props;
-	
+		const {project, description, photoUrl} = props;
+		const maxLength = 165
 	return (
-		<div className="w-full  p-0 bg-black text-white">
+		<div className="w-full  text-white p-6 card-media-container-main">
 			<CardMedia
 				component="img"
-				height="140"
-				image={Img}
+				height="100"
+				image={photoUrl}
 				alt="green iguana"
-                className="text-center"
+                className="text-center max-h-[20vh]"
 			/>
 			<div className="">
 			<CardContent>
 				<Typography gutterBottom variant="h5" component="div">
-					{name}
+					{project}
 				</Typography>
-				<Typography variant="body2" color="text.white">
-					Lizards are a widespread group of squamate reptiles, with
-					over 6,000 species, ranging across all continents except
-					Antarctica
+				<Typography variant="body2" color="text.white" className="project-problem text-justify">
+					{description.substring(0, maxLength) + '...'}
 				</Typography>
 			</CardContent>
 			<CardActions>
