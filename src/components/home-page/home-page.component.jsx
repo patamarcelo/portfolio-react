@@ -1,5 +1,5 @@
 import "./home-page.styles.css";
-import MediaCard from "../card/card-component";
+import MediaCard from "../card/card.component";
 import { Projects } from "../data-json/data-json";
 
 const NAMES = [

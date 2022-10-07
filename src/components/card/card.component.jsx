@@ -6,7 +6,9 @@ import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 
+import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
 import { useNavigate } from 'react-router-dom'
+import './card.styles.css'
 
 export default function MediaCard(props) {
 		const {project, description, photoUrl, projectName} = props;
@@ -34,7 +36,9 @@ export default function MediaCard(props) {
 				</Typography>
 			</CardContent>
 			<CardActions>
-				<Button size="small" onClick={handlerNavigation}>See More...</Button>
+				<div className="flex justify-start cursor-pointer pt-4 mt-2">
+					<RemoveRedEyeIcon color="secondary" size="small" onClick={handlerNavigation}>More...</RemoveRedEyeIcon>
+				</div>
 			</CardActions>
 			</div>
 		</div>

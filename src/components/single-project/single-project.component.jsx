@@ -5,12 +5,17 @@ import { Projects } from "../data-json/data-json";
 import { useNavigate } from "react-router-dom";
 
 import IconButton from "@mui/material/IconButton";
-import Button from "@mui/material/Button";
-import HomeIcon from "@mui/icons-material/Home";
+// import Button from "@mui/material/Button";
+import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
+import { amber } from '@mui/material/colors';
+
 
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import "./single-project.styles.css";
+
+import SingleDescription from './single-project-description.component'
+
 
 const SingleProject = () => {
 	const { index } = useParams();
@@ -57,13 +62,14 @@ const SingleProject = () => {
 		<Fragment>
 			{project
 				? <Fragment>
-						<div className="mr-auto ml-4 fixed top-0 left-4">
+						<div className="mr-auto ml-4 top-0 left-4 absolute">
 							<IconButton
 								onClick={handlerHome}
 								color="primary"
 								size="large"
+								style={{ fontSize: 40, fill: 'green' }}
 							>
-								<HomeIcon fontSize="inherit" />
+								<HomeOutlinedIcon fontSize="inherit" sx={{ color: amber[500] }}/>
 							</IconButton>
 						</div>
 						<div className="flex flex-col items-center justify-center w-full min-h-[100vh] single-card-container pb-4">
@@ -83,27 +89,7 @@ const SingleProject = () => {
 									})}
 								</Carousel>
 							</div>
-							<div className="flex items-start flex-col justify-start bg-gray-200 rounded-lg p-10 w-5/6 border-1 shadow-2xl">
-								<div className="mb-10">
-									<h2>
-										{project.problem}
-									</h2>
-								</div>
-								<div className="mb-10">
-									{project.features.map(feature => {
-										return (
-											<h1 className="py-1">
-												{feature}
-											</h1>
-										);
-									})}
-								</div>
-								<div className="mb-10">
-									<h2>
-										{project.final}
-									</h2>
-								</div>
-							</div>
+							<SingleDescription project={project} />
 						</div>
 					</Fragment>
 				: <div className="flex justify-center w-full min-h-[100vh]">
