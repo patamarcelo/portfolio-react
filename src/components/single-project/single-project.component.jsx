@@ -7,6 +7,8 @@ import { useNavigate } from "react-router-dom";
 import IconButton from "@mui/material/IconButton";
 // import Button from "@mui/material/Button";
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
+import KeyboardDoubleArrowLeftIcon from '@mui/icons-material/KeyboardDoubleArrowLeft';
+import KeyboardDoubleArrowRightIcon from '@mui/icons-material/KeyboardDoubleArrowRight';
 import { amber } from '@mui/material/colors';
 
 
@@ -34,13 +36,40 @@ const SingleProject = () => {
 
 	const createArrPictures = (name, number) => {
 		const links = [];
-		for (let i = 1; i < number; i++) {
+		for (let i = 1; i < number + 1; i++) {
 			const link = handleUrl(name, i);
 			links.push(link);
 		}
-		console.log(links);
 		return links;
 	};
+
+	const handlerPrevproject = () => {
+		const isNameProject = project => project.name === index;
+		const currentProject = Projects.findIndex(isNameProject)
+		var param = currentProject
+		if(currentProject > 0) {
+			param = currentProject - 1
+			const nextParam = Projects[param].name
+			return navigate(`/${nextParam}`)
+		} else {
+			return false
+		}
+	}
+	
+		const handlerNextproject = () => {
+		const maxProjects = Projects.length
+		const isNameProject = project => project.name === index;
+		const currentProject = Projects.findIndex(isNameProject)
+		var param = currentProject
+		if(currentProject < maxProjects) {
+			param = currentProject + 1 
+			const nextParam = Projects[param].name
+			return navigate(`/${nextParam}`)
+		} else {
+			return false
+		}
+
+	}
 
 	const handlerHome = () => navigate("/");
 
@@ -72,6 +101,30 @@ const SingleProject = () => {
 								<HomeOutlinedIcon fontSize="inherit" sx={{ color: amber[500] }}/>
 							</IconButton>
 						</div>
+						<div className="ml-auto mr-4 top-0 right-4 absolute">
+							<div className="flex justify-between items-end">
+							<IconButton
+								onClick={handlerPrevproject}
+								color="primary"
+								size="large"
+								style={{ fontSize: 40, fill: 'green' }}
+							>
+								<KeyboardDoubleArrowLeftIcon fontSize="inherit" sx={{ color: amber[500] }}/>
+							</IconButton>
+								<p className="text text-white text-sm pb-[10px]">Projects</p>
+							{
+								handlerNextproject &&
+								<IconButton
+								onClick={handlerNextproject}
+								color="primary"
+								size="large"
+								style={{ fontSize: 40, fill: 'green' }}
+								>
+									<KeyboardDoubleArrowRightIcon fontSize="inherit" sx={{ color: amber[500] }}/>
+							</IconButton>
+								}
+								</div>
+						</div>
 						<div className="flex flex-col items-center justify-center w-full min-h-[100vh] single-card-container pb-4">
 							<div className="title flex mb-5">
 								<h1 className="text-white mt-5">
@@ -82,7 +135,7 @@ const SingleProject = () => {
 								<Carousel showArrows={true} autoPlay={true}>
 									{picLinks.map((link, i) => {
 										return (
-											<div>
+											<div key={i}>
 												<img src={link} alt={i} />
 											</div>
 										);
