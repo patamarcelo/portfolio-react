@@ -5,18 +5,18 @@ import { Projects } from "../data-json/data-json";
 import { useNavigate } from "react-router-dom";
 
 import IconButton from "@mui/material/IconButton";
-// import Button from "@mui/material/Button";
+
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import KeyboardDoubleArrowLeftIcon from '@mui/icons-material/KeyboardDoubleArrowLeft';
 import KeyboardDoubleArrowRightIcon from '@mui/icons-material/KeyboardDoubleArrowRight';
 import { amber } from '@mui/material/colors';
 
 
-import { Carousel } from "react-responsive-carousel";
-import "react-responsive-carousel/lib/styles/carousel.min.css";
+
 import "./single-project.styles.css";
 
 import SingleDescription from './single-project-description.component'
+import SingleProjectCarousel from './single-project-carousel.component'
 
 
 const SingleProject = () => {
@@ -44,30 +44,31 @@ const SingleProject = () => {
 	};
 
 	const handlerPrevproject = () => {
+		const maxProjects = Projects.length - 1
 		const isNameProject = project => project.name === index;
 		const currentProject = Projects.findIndex(isNameProject)
-		var param = currentProject
+		let param = currentProject
 		if(currentProject > 0) {
 			param = currentProject - 1
-			const nextParam = Projects[param].name
-			return navigate(`/${nextParam}`)
 		} else {
-			return false
+			param = maxProjects
 		}
+		const nextParam = Projects[param].name
+		return navigate(`/${nextParam}`)
 	}
 	
 		const handlerNextproject = () => {
 		const maxProjects = Projects.length
 		const isNameProject = project => project.name === index;
 		const currentProject = Projects.findIndex(isNameProject)
-		var param = currentProject
-		if(currentProject < maxProjects) {
+		let param = currentProject
+		if(currentProject < maxProjects - 1) {
 			param = currentProject + 1 
-			const nextParam = Projects[param].name
-			return navigate(`/${nextParam}`)
 		} else {
-			return false
+			param = 0
 		}
+		let nextParam = Projects[param].name
+		return navigate(`/${nextParam}`)
 
 	}
 
@@ -131,17 +132,7 @@ const SingleProject = () => {
 									{project.title}
 								</h1>
 							</div>
-							<div className="flex justify-center w-4/5">
-								<Carousel showArrows={true} autoPlay={true}>
-									{picLinks.map((link, i) => {
-										return (
-											<div key={i}>
-												<img src={link} alt={i} />
-											</div>
-										);
-									})}
-								</Carousel>
-							</div>
+							<SingleProjectCarousel picLinks={picLinks} />
 							<SingleDescription project={project} />
 						</div>
 					</Fragment>
