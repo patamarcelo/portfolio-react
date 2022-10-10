@@ -176,6 +176,7 @@ export const Projects = [
           'Learned on practice how to use State Management on React, [Context and Redux]',
           'Deploy project on Netlify directly from Github',
           'Understand and implement React-Router',
+          'Stripe Payment in dev Mode implemented'
         ],
         final:
         "Good understanding of React and it's features"
