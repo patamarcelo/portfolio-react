@@ -166,7 +166,7 @@ export const Projects = [
           password: ''
         },
         href: 'https://crn-clothing-mp.netlify.app/',
-        pictures: 6,
+        pictures: 7,
         problem:
           'E-Commerce to learn a lot of features, and advanced features from React',
         idea: '',
