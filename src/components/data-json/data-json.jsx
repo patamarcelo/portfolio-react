@@ -155,5 +155,30 @@ export const Projects = [
         final:
           'Many people have contacted us to find out more about the property.          '
       }
+    },
+    {
+      name: 'react-ecommerce',
+      project: {
+        title: 'React E-Commerce - ZTM React Course',
+        access: {
+          link: 'https://crn-clothing-mp.netlify.app/',
+          user: '',
+          password: ''
+        },
+        href: 'https://crn-clothing-mp.netlify.app/',
+        pictures: 6,
+        problem:
+          'E-Commerce to learn a lot of features, and advanced features from React',
+        idea: '',
+        features: [
+          'Learned in deep how to use Functional Components',
+          'Login Auth in Firebase with Google Authentication',
+          'Learned on practice how to use State Management on React, [Context and Redux]',
+          'Deploy project on Netlify directly from Github',
+          'Understand and implement React-Router',
+        ],
+        final:
+        "Good understanding of React and it's features"
+      }
     }
   ]
