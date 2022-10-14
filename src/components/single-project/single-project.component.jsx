@@ -92,13 +92,14 @@ const SingleProject = () => {
 		<Fragment>
 			{project
 				? <Fragment>
+					<div className="lg:mb-0 mb-20">
 						<div className="mr-auto ml-4 top-0 left-4 absolute">
 							<IconButton
 								onClick={handlerHome}
 								color="primary"
 								size="large"
 								style={{ fontSize: 40, fill: 'green' }}
-							>
+								>
 								<HomeOutlinedIcon fontSize="inherit" sx={{ color: amber[500] }}/>
 							</IconButton>
 						</div>
@@ -109,7 +110,7 @@ const SingleProject = () => {
 								color="primary"
 								size="large"
 								style={{ fontSize: 40, fill: 'green' }}
-							>
+								>
 								<KeyboardDoubleArrowLeftIcon fontSize="inherit" sx={{ color: amber[500] }}/>
 							</IconButton>
 								<p className="text text-white text-sm pb-[10px]">Projects</p>
@@ -126,9 +127,11 @@ const SingleProject = () => {
 								}
 								</div>
 						</div>
-						<div className="flex flex-col items-center justify-center w-full min-h-[100vh] single-card-container pb-4">
-							<div className="title flex mb-5">
-								<h1 className="text-white mt-5">
+						</div>	
+						<div className="flex flex-col items-center justify-center w-full min-h-[100vh] single-card-container pb-0 rounded-bl-lg rounded-br-lg
+						md:rounded-none  md:pb-4">
+							<div className="title flex mb-5 sm:justify-center text-center">
+								<h1 className="text-white mt-5 text-sm md:text-3xl">
 									{project.title}
 								</h1>
 							</div>

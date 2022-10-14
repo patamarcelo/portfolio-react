@@ -18,7 +18,7 @@ export default function MediaCard(props) {
 			navigation(`/${projectName}`)
 		}	
 	return (
-		<div className="w-full  text-white p-6 card-media-container-main">
+		<div className="w-full  text-white p-6 card-media-container-main min-h-[48vh]">
 			<CardMedia
 				component="img"
 				height="100"

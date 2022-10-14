@@ -2,7 +2,7 @@ import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
 
 const SingleDescription = ({ project }) => {
 	return (
-		<div className="flex items-start flex-col justify-start bg-gray-100 rounded-lg p-10 w-[90%] border-1 shadow-inner">
+		<div className="flex items-start flex-col justify-start bg-gray-100 rounded-lg p-0 md:p-10 w-[98%] mb-1 md:mt-0 mt-10 md:w-[90%] border-1 shadow-inner">
 			<div className="flex flex-start flex-col p-5 text-justify">
 				<div className="flex flex-col justify-start items-start mb-5">
 					<p className="text-h4 font-bold">
