@@ -29,7 +29,7 @@ const HomeAuth = () => {
         })
         .then(data => {
             console.log(data.data.dados);
-            setRiskData(data.data.dados)
+            setRiskData(data.data.dados.reverse())
         })
     }
     
@@ -65,7 +65,7 @@ const HomeAuth = () => {
 
             }
             </div>
-            {riskData ? 
+            {riskData.length > 0 ? 
             <div className="flex mt-10 justify-center max-h-[50vh] bg-gray-300 rounded-lg w-4/5 self-center overflow-scroll">
                 <ul>
                 {riskData.map((data, index) => {

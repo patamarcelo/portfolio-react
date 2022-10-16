@@ -99,7 +99,7 @@ const AuthPage = () => {
 						onChange={handlerInput}
 						onKeyPress={handlePress}
 					/>
-					<LoadingButton loading={loading} onClick={handleAuth} variant="contained" >
+					<LoadingButton loading={loading} onClick={handleAuth} variant="contained" className="!pt-0 h-10">
 						{!loading ? "Enter" : "Loading..."}
 					</LoadingButton>
 				</Stack>
