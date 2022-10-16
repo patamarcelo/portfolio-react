@@ -10,7 +10,7 @@ import { useState } from "react";
 import TextField from "@mui/material/TextField";
 
 import Stack from "@mui/material/Stack";
-import Button from "@mui/material/Button";
+import LoadingButton from '@mui/lab/LoadingButton';
 
 import { client } from "../../utils/axios/axios.utils";
 
@@ -25,6 +25,7 @@ const AuthPage = () => {
 		password: ""
 	};
 	const [currentPassword, setCurrentPassword] = useState(INITIAL_USER);
+	const [loading, setLoading] = useState(false)
 
 	const dispatch = useDispatch();
 	const isAuth = useSelector(selectIsAuthUser);
@@ -46,6 +47,7 @@ const AuthPage = () => {
 	};
 
 	const authUser = async credentials => {
+		setLoading(true)
 		try {
 			await client.post("auth/", credentials).then(response => {
 				dispatch(setUser(response.data));
@@ -58,6 +60,7 @@ const AuthPage = () => {
 				"Succefull Loggin...",
 			);
 			setCurrentPassword(INITIAL_USER);
+			setLoading(false)
 		} catch (e) {
 			console.log(e);
 			createNotification(
@@ -67,6 +70,7 @@ const AuthPage = () => {
 			);
 			console.log("password errado");
 			setCurrentPassword(INITIAL_USER);
+			setLoading(false)
 		}
 	};
 
@@ -74,7 +78,7 @@ const AuthPage = () => {
 		<div className="grid h-screen place-items-center">
 			<div className="flex flex-col items-center justify-center w-2/3 bg-gray-300 m-10 p-10 rounded-lg">
 				<h1 className="mb-10">Login</h1>
-				<Stack spacing={2} direction="column" className="w-3/5">
+				<Stack spacing={2} direction="column" className="w-2/5">
 					<TextField
 						id="outlined-username-input"
 						label="Username"
@@ -95,9 +99,9 @@ const AuthPage = () => {
 						onChange={handlerInput}
 						onKeyPress={handlePress}
 					/>
-					<Button onClick={handleAuth} variant="contained">
-						Enter
-					</Button>
+					<LoadingButton loading={loading} onClick={handleAuth} variant="contained" >
+						{!loading ? "Enter" : "Loading..."}
+					</LoadingButton>
 				</Stack>
 			</div>
 		</div>
