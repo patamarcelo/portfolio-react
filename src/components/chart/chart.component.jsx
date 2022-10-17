@@ -46,7 +46,7 @@ const Charts = ({ newData }) => {
 		labels,
 		datasets: [
 			{
-				label: "Dataset 1",
+				label: "Brazil Risk",
 				data: dataRisk,
 				borderColor: "rgb(255, 99, 132)",
 				backgroundColor: "rgba(255, 99, 132, 0.5)"
@@ -54,9 +54,15 @@ const Charts = ({ newData }) => {
 		]
 	};
 	return (
-		<div className="!bg-gray-300 !mt-10 !rounded-xl">
-			<Line options={options} data={data} />
-		</div>
+		<>
+		{
+			newData.length > 0 ? 
+			<div className="!bg-white !rounded-xl">
+				<Line options={options} data={data} />
+			</div>
+			: null
+		}
+		</>
 	);
 };
 
