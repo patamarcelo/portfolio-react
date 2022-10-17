@@ -29,16 +29,17 @@ export const options = {
 		},
 		title: {
 			display: true,
-			text: "Chart.js Line Chart"
+			text: "Chart Data"
 		}
 	}
 };
 
 const Charts = ({ newData }) => {
-	const labels = newData.map(data => {
+	const reversedData = newData.reverse()
+	const labels = reversedData.map(data => {
 		return data.x;
 	});
-	const dataRisk = newData.map(data => {
+	const dataRisk = reversedData.map(data => {
 		return data.y;
 	});
 

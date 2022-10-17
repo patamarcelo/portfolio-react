@@ -2,7 +2,7 @@ import Button from "@mui/material/Button";
 import LoadingButton from '@mui/lab/LoadingButton';
 import Charts from "../chart/chart.component";
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { client } from "../../utils/axios/axios.utils";
 
 import { useSelector } from "react-redux";
@@ -25,10 +25,10 @@ const RiskData = () => {
                 headers: { Authorization: `Token ${currentUser.token}` }
             })
         .then(data => {
-            const dataApi = data.data.dados.reverse();
+            const dataApi = data.data.dados;
             console.log(dataApi);
+			setChartRiskData(dataApi)
             setRiskData(dataApi);
-			setChartRiskData(data.data.dados)
         })
         } catch(e){
             console.log(e)
@@ -36,6 +36,13 @@ const RiskData = () => {
             setIsLoading(false)
         }
 	};
+
+    useEffect(() => {
+        const reversedArray = riskData.reverse()
+        setChartRiskData(reversedArray)
+    },[riskData])
+
+
 
     const clearData = () => {
         setRiskData([])
@@ -70,12 +77,12 @@ const RiskData = () => {
             
             {
                 riskData.length > 0 ? 
-            <div className="flex flex-col w-full mt-5">
-                <div className="flex justify-between items-top w-full px-4 py-3">
-                    <div className="w-4/5">
+            <div className="flex flex-col items-center w-full mt-5 h-full">
+                <div className="flex  items-stretch justify-between items-top w-full px-4 py-3 max-h-[70vh]">
+                    <div className="w-[78%]">
                         <Charts newData={chartRiskData} />
                     </div>
-                    <div className="w-1/5 flex justify-end">
+                    <div className="w-1/5">
                         <RiskDataTable riskData={riskData}/>
                     </div>
                 </div>

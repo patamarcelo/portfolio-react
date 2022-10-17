@@ -22,9 +22,9 @@ const RiskDataTable = ({riskData}) => {
         <>
         {riskData.length > 0
             ? <div className="
-            flex flex-col flex-shrink  max-h-[69vh] bg-white rounded-lg w-4/5 self-center overflow-scroll
+            flex flex-col bg-white rounded-lg w-full overflow-scroll min-h-[100%] max-h-[100%]
             ">
-                <div className="flex justify-start p-4 m-2">
+                <div className="flex justify-center p-4 m-2">
                 <TextField id="standard" label="Filter" type="search" onChange={hanlderFilter} />
                 </div>
                 <div className="flex justify-center items-center w-full">

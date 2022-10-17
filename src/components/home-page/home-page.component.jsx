@@ -15,7 +15,7 @@ const HomePage = () => {
 	};
 
 	return (
-		<div className="rounded  p-2 home-page-container">
+		<div className="rounded  p-2 home-page-container h-full">
 			<div className="my-1 flex flex-column w-full items-center justify-center">
 				<h1 className="title text-white">PORTFOLIO</h1>
 			</div>

@@ -23,7 +23,6 @@ const HomeAuth = () => {
 							size="75"
 						/>
 					: null}
-				<h1 className="text-white text-3xl mt-10">LOGGED USER AREA</h1>
 				<Button
 					onClick={handlerLogout}
 					variant="contained"
