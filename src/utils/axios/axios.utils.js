@@ -6,7 +6,7 @@ const baseURL =
 		: "https://valutech.herokuapp.com/";
 
 export const client = axios.create({
-	baseURL: "https://valutech.herokuapp.com/",
+	baseURL: baseURL,
 	headers: {
 		"Content-Type": "application/json"
 	}
