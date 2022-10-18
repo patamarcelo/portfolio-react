@@ -9,7 +9,7 @@ const RiskDataTable = ({riskData}) => {
 
     useEffect(() => {
         const filterArr = riskData.filter((data) => {
-            return data.x.includes(searchField)
+            return data.x.includes(searchField) || data.y.toString().includes(searchField)
         })
         setFilteredData(filterArr)
     },[searchField, riskData])

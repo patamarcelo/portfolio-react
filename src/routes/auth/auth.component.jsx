@@ -76,9 +76,9 @@ const AuthPage = () => {
 
 	return (
 		<div className="grid h-screen place-items-center">
-			<div className="flex flex-col items-center justify-center w-2/3 bg-gray-300 m-10 p-10 rounded-lg">
+			<div className="flex flex-col items-center justify-center lg:w-2/3 w-full bg-gray-300 m-10 p-10 rounded-lg">
 				<h1 className="mb-10">Login</h1>
-				<Stack spacing={2} direction="column" className="w-2/5">
+				<Stack spacing={2} direction="column" className="md:w-3/5 w-full">
 					<TextField
 						id="outlined-username-input"
 						label="Username"
