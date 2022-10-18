@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 
 
 const RiskDataTable = ({riskData}) => {
-    const nerArr = [...riskData]
+    const nerArr = JSON.parse(JSON.stringify(riskData));
     const sortedArray = nerArr.sort(function(a,b){
         var c = new Date(a.x);
         var d = new Date(b.x);
