@@ -4,15 +4,21 @@ import { useState, useEffect } from 'react'
 
 
 const RiskDataTable = ({riskData}) => {
+    const sortedArray = riskData.sort(function(a,b){
+        var c = new Date(a.x);
+        var d = new Date(b.x);
+        return d-c;
+        });
+    console.log('sorted :',sortedArray);
     const [filteredData, setFilteredData ] = useState(riskData)
     const [searchField, setSearchField] = useState("")
 
     useEffect(() => {
-        const filterArr = riskData.filter((data) => {
+        const filterArr = sortedArray.filter((data) => {
             return data.x.includes(searchField) || data.y.toString().includes(searchField)
         })
         setFilteredData(filterArr)
-    },[searchField, riskData])
+    },[searchField, sortedArray])
     
     const hanlderFilter = (e) => {
         setSearchField(e.target.value)
