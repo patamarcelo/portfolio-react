@@ -4,13 +4,14 @@ import { useState, useEffect } from 'react'
 
 
 const RiskDataTable = ({riskData}) => {
-    const sortedArray = riskData.sort(function(a,b){
+    const nerArr = [...riskData]
+    const sortedArray = nerArr.sort(function(a,b){
         var c = new Date(a.x);
         var d = new Date(b.x);
         return d-c;
         });
     console.log('sorted :',sortedArray);
-    const [filteredData, setFilteredData ] = useState(riskData)
+    const [filteredData, setFilteredData ] = useState(nerArr)
     const [searchField, setSearchField] = useState("")
 
     useEffect(() => {
@@ -26,7 +27,7 @@ const RiskDataTable = ({riskData}) => {
 
     return (
         <>
-        {riskData.length > 0
+        {nerArr.length > 0
             ? <div className="
             flex flex-col bg-white rounded-lg w-full overflow-scroll min-h-[100%] max-h-[100%]
             ">
