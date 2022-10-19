@@ -11,7 +11,7 @@ const RiskDataTable = ({riskData}) => {
         return d-c;
         });
     console.log('sorted :',sortedArray);
-    const [filteredData, setFilteredData ] = useState(nerArr)
+    const [filteredData, setFilteredData ] = useState(sortedArray)
     const [searchField, setSearchField] = useState("")
 
     useEffect(() => {

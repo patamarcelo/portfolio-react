@@ -173,13 +173,39 @@ export const Projects = [
         features: [
           'Learned in deep how to use Functional Components',
           'Login Auth in Firebase with Google Authentication',
-          'Learned on practice how to use State Management on React, [Context and Redux]',
+          'Learned on practice how to use State Management on React, [Context, Reducer and Redux]',
           'Deploy project on Netlify directly from Github',
           'Understand and implement React-Router',
           'Stripe Payment in dev Mode implemented'
         ],
         final:
         "Good understanding of React and it's features"
+      }
+    },
+    {
+      name: 'react-portfolio',
+      project: {
+        title: 'React Portfolio',
+        access: {
+          link: 'https://react-portfolio-mp.netlify.app/admin',
+          user: 'admin@admin.com',
+          password: '12345ADMIN'
+        },
+        href: 'https://react-portfolio-mp.netlify.app/',
+        pictures: 6,
+        problem:
+          'Personal Website built in React to Show my Portfolio',
+        idea: '',
+        features: [
+          'Implementation of some features like Redux and Router',
+          'Simple Home page with cards to show projects, and single page to show each project in detail',
+          'Infinite Paginator to navigate between projects, Carousel troug pictures',
+          'Auth Section differentiating users and users infos, getting data from an already built Django project handling Database and API\'s ',
+          'Fetch Data from Django, chart ploting and table, with option to filter data'
+
+        ],
+        final:
+        "Implementation of React knowledge, and developed a scalable plataform to show all my projects"
       }
     }
   ]
