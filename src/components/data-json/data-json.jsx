@@ -157,6 +157,32 @@ export const Projects = [
       }
     },
     {
+      name: 'vue-modern-cv',
+      project: {
+        title: 'Modern CV - Vue',
+        access: {
+          link: 'https://mpata.eth.limo ',
+          user: '',
+          password: ''
+        },
+        href: 'https://mpata.eth.limo',
+        pictures: 5,
+        problem:
+          'Modern Vue App to show my CV and keep updated',
+        idea: 'idea that we can work on on social media',
+        features: [
+          'Vue App with Authentication feature and password protection',
+          'Quasar Framework with Vite',
+          'Tailwind Framework',
+          'Modern Skeleton to hadle loading state',
+          'Responsive design',
+          'Generated beautifull PDF from html template'
+        ],
+        final:
+          'App used to show my personal CV'
+      }
+    },
+    {
       name: 'react-ecommerce',
       project: {
         title: 'React E-Commerce - ZTM React Course',

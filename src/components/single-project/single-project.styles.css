@@ -17,4 +17,5 @@
 
 .single-card-container {
     background-color: rgb(0, 0, 0, 0.6);
+    border-radius: 10px;
 }
