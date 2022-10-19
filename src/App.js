@@ -2,6 +2,7 @@ import "./App.css";
 import HomePage from "./components/home-page/home-page.component";
 import SingleProject from "./components/single-project/single-project.component";
 import AuthPage from "./routes/auth/auth.component";
+import CardSkeleton from "./components/skeleton/skeleton-card.component"
 
 import HomeAuth from "./components/home-auth/home.auth.component";
 import NotFoundPage from "./routes/error-page/not-found.component";
@@ -35,6 +36,7 @@ function App() {
 								path="/admin"
 								element={!isAuth ? <AuthPage /> : <HomeAuth />}
 							/>
+							<Route path="/skeleton" element={<CardSkeleton />} />
 
 						</Routes>
 					</ScrollToTop>

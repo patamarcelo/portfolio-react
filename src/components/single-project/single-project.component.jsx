@@ -11,15 +11,20 @@ import KeyboardDoubleArrowLeftIcon from '@mui/icons-material/KeyboardDoubleArrow
 import KeyboardDoubleArrowRightIcon from '@mui/icons-material/KeyboardDoubleArrowRight';
 import { amber } from '@mui/material/colors';
 
+import { selectIsLoading } from '../../store/system/system.selector'
+import { useSelector } from 'react-redux';
 
 
 import "./single-project.styles.css";
 
 import SingleDescription from './single-project-description.component'
 import SingleProjectCarousel from './single-project-carousel.component'
+import CardSkeleton from '../skeleton/skeleton-card.component'
 
 
 const SingleProject = () => {
+	const isLoading = useSelector(selectIsLoading)
+
 	const { index } = useParams();
 	const [project, setSingleProject] = useState();
 	const [picLinks, setPicLinks] = useState([]);
@@ -90,6 +95,11 @@ const SingleProject = () => {
 
 	return (
 		<Fragment>
+			{
+				isLoading ? 
+				<CardSkeleton />
+				: null
+			}
 			{project
 				? <Fragment>
 					<div className="lg:mb-0 mb-20">
