@@ -12,7 +12,8 @@ import KeyboardDoubleArrowRightIcon from '@mui/icons-material/KeyboardDoubleArro
 import { amber } from '@mui/material/colors';
 
 import { selectIsLoading } from '../../store/system/system.selector'
-import { useSelector } from 'react-redux';
+import { setIsLoading } from '../../store/system/system.action'
+import { useSelector, useDispatch } from 'react-redux';
 
 
 import "./single-project.styles.css";
@@ -23,6 +24,7 @@ import CardSkeleton from '../skeleton/skeleton-card.component'
 
 
 const SingleProject = () => {
+	const dispatch = useDispatch();
 	const isLoading = useSelector(selectIsLoading)
 
 	const { index } = useParams();
@@ -78,6 +80,17 @@ const SingleProject = () => {
 	}
 
 	const handlerHome = () => navigate("/");
+	
+	
+	useEffect(() => {
+		dispatch(setIsLoading(true))
+		console.log('set true is loading....', isLoading)
+		setTimeout(() => {
+			dispatch(setIsLoading(false))
+			console.log('take true of inside setTimeout...', isLoading)
+		},2000)
+	},[])
+	
 
 	useEffect(
 		() => {
@@ -96,12 +109,11 @@ const SingleProject = () => {
 	return (
 		<Fragment>
 			{
-				isLoading ? 
+				isLoading && 
 				<CardSkeleton />
-				: null
 			}
-			{project
-				? <Fragment>
+			{project && !isLoading &&
+				<Fragment>
 					<div className="lg:mb-0 mb-20">
 						<div className="mr-auto ml-4 top-0 left-4 absolute">
 							<IconButton
@@ -149,9 +161,13 @@ const SingleProject = () => {
 							<SingleDescription project={project} />
 						</div>
 					</Fragment>
-				: <div className="flex justify-center w-full min-h-[100vh]">
+				}
+				{ !project && isLoading &&
+					<div className="flex justify-center w-full min-h-[100vh]">
 						<div>empty project</div>
-					</div>}
+					</div>
+				}
+				
 		</Fragment>
 	);
 };
