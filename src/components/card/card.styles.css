@@ -3,3 +3,7 @@ button {
 	text-shadow: -0.2px -0.2px 0px #fff, -0.2px 0.2px 0px #fff, 0.2px -0.2px 0px #fff,
 		0.2px 0px 0px #fff;
 }
+
+.card-media-container-main{
+	border-radius: 10px;
+}
