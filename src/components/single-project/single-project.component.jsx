@@ -23,6 +23,7 @@ const SingleProject = () => {
 	const { index } = useParams();
 	const [project, setSingleProject] = useState();
 	const [picLinks, setPicLinks] = useState([]);
+	const [currentPosition, setCurrentPosition] = useState('');
 	const navigate = useNavigate();
 
 	const filterProject = () => {
@@ -71,8 +72,19 @@ const SingleProject = () => {
 		return navigate(`/${nextParam}`)
 
 	}
+	
+
 
 	const handlerHome = () => navigate("/");
+
+	const handlerPosition = () => {
+		const pos = Projects.findIndex(obj => obj.name === index)
+		setCurrentPosition(pos + 1)
+	}
+	
+	useEffect(() =>{
+		handlerPosition()
+	},[index])
 
 	useEffect(
 		() => {
@@ -84,6 +96,7 @@ const SingleProject = () => {
 					newFilterProject.project.pictures
 				)
 			);
+			console.log('Projects', Projects)
 		},
 		[index]
 	);
@@ -113,7 +126,10 @@ const SingleProject = () => {
 								>
 								<KeyboardDoubleArrowLeftIcon fontSize="inherit" sx={{ color: amber[500] }}/>
 							</IconButton>
-								<p className="text text-white text-sm pb-[10px]">Projects</p>
+								<div className="flex flex-col justify-center items-center ml-2 mr-2">
+								<p className="text text-white text-sm">Projects</p>
+								<small className="text text-white text-[11px]">{currentPosition} of {Projects.length}</small>
+								</div>
 							{
 								handlerNextproject &&
 								<IconButton

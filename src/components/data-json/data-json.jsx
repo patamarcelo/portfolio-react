@@ -157,6 +157,31 @@ export const Projects = [
       }
     },
     {
+      name: 'react-dashboard',
+      project: {
+        title: 'React Dashboard',
+        access: {
+          link: 'https://react-dashboard-mp.netlify.app/',
+          user: '',
+          password: ''
+        },
+        href: 'https://react-dashboard-mp.netlify.app/',
+        pictures: 13,
+        problem:
+          'Dashboard Tutorial project to improve knowledge and use differentes components in React',
+        idea: '',
+        features: [
+          'Dashboard with multiple pages, Charts, Form, Data Tables',
+          'Implementation of Dark and Light theme',
+          'Dashboard Page responsive using grid layout',
+          "Saving Form Data using Firebase Storage, and retrieving data as well",
+          'Multiple Packages like: Mui Material, Nivo, Formik, Yup, Fullcalendar, React-pro-sidebar ',
+        ],
+        final:
+        "Have more knowledge about how to use React and its components in different ways"
+      }
+    },
+    {
       name: 'react-ecommerce',
       project: {
         title: 'React E-Commerce - ZTM React Course',
