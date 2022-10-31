@@ -162,15 +162,16 @@ export const Projects = [
         title: 'React Dashboard',
         access: {
           link: 'https://react-dashboard-mp.netlify.app/',
-          user: '',
-          password: ''
+          user: 'admin@admin.com',
+          password: '12341234'
         },
         href: 'https://react-dashboard-mp.netlify.app/',
-        pictures: 13,
+        pictures: 14,
         problem:
           'Dashboard Tutorial project to improve knowledge and use differentes components in React',
         idea: '',
         features: [
+          'Auth User Function using Firebase',
           'Dashboard with multiple pages, Charts, Form, Data Tables',
           'Implementation of Dark and Light theme',
           'Dashboard Page responsive using grid layout',
