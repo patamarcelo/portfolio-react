@@ -4,14 +4,14 @@ export const Projects = [
       project: {
         title: 'Rice Brokers - System',
         access: {
-          link: 'www.ricefoods.com.br',
+          link: 'https://ricefoods.herokuapp.com/',
           user: '',
           password: ''
         },
-        href: 'http://www.ricefoods.com.br',
+        href: 'https://ricefoods.herokuapp.com/',
         pictures: 16,
         problem:
-          "System was created with the Python language, using the Django Framework that works on the MVT model. published my company's website in this framework, and within the same project I created the system to control Orders, Commissions, Loads of each order, classification of loads, invoices... The data is all handled in Python on the backend, using PostgreSql as the database. the Front-end was made in Django templates, with CSS, Bootstrap, javascript. Today I would probably do all the Front in Vuejs making ajax requests, using Django as backend.",
+          "System was created with the Python language, using the Django Framework that works on the MVT model. published my company's website in this framework, and within the same project I created the system to control Orders, Commissions, Loads of each order, classification of loads, invoices... The data is all handled in Python on the backend, using PostgreSql as the database. the Front-end was made in Django templates, with CSS, Bootstrap, javascript and more.",
         idea: 'idea that we can work on',
         features: [
           'CRUD to control everything (suppliers, Customers, Orders, Loads…), load report with weighted average of classifications per order, invoice report, commission report, chart with order price tracking per customer, summary table monthly shipments, limited access for employees;',
