@@ -2,7 +2,6 @@ import "./home-page.styles.css";
 import MediaCard from "../card/card.component";
 import { Projects } from "../data-json/data-json";
 
-
 const HomePage = () => {
 	const handleUrl = (projectName, index) => {
 		return `https://storageapi2.fleek.co/7d351ace-1fcf-4bc2-be39-c54631049d11-bucket/projects/${projectName}/f${index}.png`;

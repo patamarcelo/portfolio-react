@@ -25,6 +25,8 @@ export default function MediaCard(props) {
 				image={photoUrl}
 				alt="green iguana"
                 className="text-center max-h-[20vh]"
+				onClick={handlerNavigation}
+				style={{cursor: 'pointer'}}
 			/>
 			<div className="">
 			<CardContent>
