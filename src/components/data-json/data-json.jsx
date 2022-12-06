@@ -258,5 +258,31 @@ export const Projects = [
         final:
         "Implementation of React knowledge, and developed a scalable plataform to show all my projects"
       }
+    },
+    {
+      name: 'pitaya-pay',
+      project: {
+        title: 'Bussiness Payment System - POS',
+        access: {
+          link: '',
+          user: '',
+          password: ''
+        },
+        href: '',
+        pictures: 11,
+        problem:
+          'Company need give support for your sellers, instead of buy a lot of machine been one for each seller, what is expensive and can become obsolete by pass time, has been developed a system that could be like a Cart Checkout from a website, containing his products and prices and making it easy to take care of the payment.',
+        idea: '',
+        features: [
+          'PWA to have a good experience by Sellers while using this app in all devices',
+          'React used by create this app, Redux and Reducer used to manage state, React Router',
+          'MUI and Others libraries used to create Components, such as CardComponents, Formik to handle forms',
+          'Firebase used to handle all users and Authentication method, used Firebase Firestore Database and Storage to manage files and data, using collections to save all necessary data',
+          'Nodejs Server used to handle payment method and make the connection between frontend and Asaas Payment Service',
+          'API created in NodeJS Server to always retrieve a updated database of products'
+        ],
+        final:
+        "Solved a changing game problem, like can make payments and scale to all his sellers, registering new ones and dispensing acquisition of lot equipaments. "
+      }
     }
   ]
