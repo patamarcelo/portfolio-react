@@ -269,7 +269,7 @@ export const Projects = [
           password: ''
         },
         href: '',
-        pictures: 11,
+        pictures: 12,
         problem:
           'Company need give support for your sellers, instead of buy a lot of machine been one for each seller, what is expensive and can become obsolete by pass time, has been developed a system that could be like a Cart Checkout from a website, containing his products and prices and making it easy to take care of the payment.',
         idea: '',
